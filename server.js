@@ -1,7 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');  
 
 const app = express();
+
+app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/bfhl', (req, res) => {
@@ -49,7 +52,6 @@ app.post('/bfhl', (req, res) => {
 
     res.json(response);
 });
-
 
 const PORT = 3001;
 app.listen(PORT, () => {
